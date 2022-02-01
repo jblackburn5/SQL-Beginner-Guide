@@ -2,7 +2,7 @@
 
 -- Inner Joins, Full/Left/Right/ Outer Joins
 
---Lets put some NULLS in the EmployeeDemographics table and EmployeeSalaty table
+--Lets put some NULLS in the EmployeeDemographics table and EmployeeSalary table
 
 --Insert into EmployeeDemographics VALUES
 --(1011, 'Ryan', 'Howard', 26, 'Male'),
@@ -19,27 +19,27 @@
 --Select *
 --From EmployeeSalary
 
---Inner Join. You can also just say Join as they are both the same thing
+--Inner Join-- You can also just say Join as they are both the same thing
 --Inner joins only look at the things that are similar in both tables(based on the common column which in this case is EmployeeID)
 SELECT *
 FROM EmployeeDemographics
 JOIN EmployeeSalary
 	ON EmployeeDemographics.EmployeeID = EmployeeSalary.EMployeeID 
 
---Full Outer Join(Joins everything in both tables)
+--Full Outer Join(Joins everything in both tables)--
 SELECT *
 FROM EmployeeDemographics
 FULL OUTER JOIN EmployeeSalary
 	ON EmployeeDemographics.EmployeeID = EmployeeSalary.EMployeeID 
 
---Left Outer Join(Joins everything from the left table and everything that is overlapping in the right table)
+--Left Outer Join(Joins everything from the left table and everything that is overlapping in the right table)--
 --The left table is the first table that we use and the right table is the second table that we use
 SELECT *
 FROM EmployeeDemographics --Left table
 LEFT OUTER JOIN EmployeeSalary --Right table
 	ON EmployeeDemographics.EmployeeID = EmployeeSalary.EMployeeID 
 
---Right Outer Join(does the exact opposite of the left outer join.
+--Right Outer Join(does the exact opposite of the left outer join)--
 SELECT *
 FROM EmployeeDemographics --Left table
 RIGHT OUTER JOIN EmployeeSalary --Right table
@@ -68,10 +68,10 @@ WHERE JobTitle = 'Salesman'
 GROUP BY JobTitle
 
 
---Union, Untion All--
+--Union, Union All--
 SELECT *
 FROM EmployeeDemographics
-UNION							--By default, Union takes out all duplicates -- Union All will include duplicates
+UNION					--By default, Union takes out all duplicates -- Union All will include duplicates
 SELECT *
 FROM WareHouseEmployeeDemographics
 
@@ -129,7 +129,7 @@ HAVING AVG(Salary) > 45000
 ORDER BY AVG(Salary)
 
 
---Updating/Deleting Data
+--Updating/Deleting Data--
 SELECT *
 FROM EmployeeDemographics
 
